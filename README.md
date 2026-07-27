@@ -1,10 +1,10 @@
-# 2D FFT Hardware Accelerator
+## 2D FFT Hardware 
 
 A Verilog implementation of a 32×32 Two-Dimensional Fast Fourier Transform (2D FFT) based on the Cooley-Tukey Decimation-In-Frequency (DIF) architecture.
 
 This project was implemented as part of the NCTU ICLab course and focuses on hardware architecture design, pipeline scheduling, memory organization, and FFT computation.
 
-## Project Overview
+### Project Overview
 
 For an N×N image,
 - Perform N row FFTs
@@ -13,7 +13,7 @@ For an N×N image,
     - **2N one-dimensional FFTs**
     - instead of directly computing the 2D DFT
 
-## Architecture
+### Architecture
 Main modules include:
 
 - Butterfly computation unit
@@ -24,12 +24,13 @@ Main modules include:
 - Memory controller
 - Control FSM
 
-## Spec.
--Input: clk, rst_n, IN_VALID, FFT2D_IN[7:0]
--Output: OUT_VALID, FFT2D_OUT_R[18:0], FFT2D_OUT_I[18:0]
+### Spec.
+- Input: clk, rst_n, IN_VALID, FFT2D_IN[7:0]
+- Output: OUT_VALID, FFT2D_OUT_R[18:0], FFT2D_OUT_I[18:0]
 - It is asynchronous reset and active_low architecture
 - Input is unsigned format, where output is 2's complement signed number format
-## Directory Structure
+- 
+### Directory Structure
 .
 ├── rtl/
 │   ├── fft2D.v
