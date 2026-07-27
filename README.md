@@ -34,11 +34,11 @@ Main modules include:
 ### Directory Structure
 ```
 ├── rtl/
-│   ├── fft2D.v
+│   ├── FFT2D.v
 │
 ├── test/
-│   ├── testbench.v
-│   ├── pattern.v
+│   ├── TESTBED.v
+│   ├── PATTERN.v
 |
 |── checker/
 │   ├── FFT_2D_golden_test.m
