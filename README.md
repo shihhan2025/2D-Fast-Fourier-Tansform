@@ -29,9 +29,10 @@ Main modules include:
 - Output: OUT_VALID, FFT2D_OUT_R[18:0], FFT2D_OUT_I[18:0]
 - It is asynchronous reset and active_low architecture
 - Input is unsigned format, where output is 2's complement signed number format
-  
-### Directory Structure
 
+
+### Directory Structure
+```
 ├── rtl/
 │   ├── fft2D.v
 │
@@ -44,3 +45,4 @@ Main modules include:
 │   ├── fft_fixed
 |
 └── README.md
+```
