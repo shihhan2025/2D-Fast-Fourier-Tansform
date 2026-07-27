@@ -36,7 +36,7 @@ Main modules include:
 ├── rtl/
 │   ├── fft2D.v
 │
-├── sim/
+├── test/
 │   ├── testbench.v
 │   ├── pattern.v
 |
