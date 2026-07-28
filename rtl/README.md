@@ -34,43 +34,6 @@
                  │ Write Back to SRAM      │
                  └─────────────────────────┘
 ```
-<!--
-### Block chart
-                  +------------------+
-Input  ---------> |        FSM       |
-                  +-------+----------+
-                            |
-                control / address
-                            |
-                            v
-                 +--------------------+
-                 |  Address Generator |
-                 +-------+------------+
-                           |
-                   SRAM Address
-                           |
-                           v
-                 +--------------------+
-                 |     RA1SH SRAM     |
-                 |   1024 x 38 bits   |
-                 +--------+-----------+
-                          | Q
-                          v
-                +---------------------+
-                |   Butterfly Engine  |
-                |   A+B   /   A-B     |
-                +---------+-----------+
-                          |
-                          v
-                +---------------------+
-                | Complex Multiplier  |
-                +--------+------------+
-                          |
-                          v
-                 +----------------+
-                 | Write Back     | +-------> SRAM
-                 +----------------+
--->                          
 
 ### Butterfly Pipeline
 | cnt2 | action |
@@ -82,12 +45,19 @@ Input  ---------> |        FSM       |
 
 ### Row FFT → Column FFT
 ```
-+--------------+   +--------------------+                   +-----------------------+
+┌──────────────┐   ┌────────────────────┐                   ┌───────────────────────┐
 | 32x32 Matrix |---| Row FFT (5 stages) |---Address      ---| Column FFT (5 stages) |--- Output
-+-------+------+   +-------+------------+   Mapping Only    +-----------------------+
+└──────────────┘   └────────────────────┘   Mapping Only    └───────────────────────┘
 ```
 - Row FFT Address: row * 32 + column
 - Column FFT Address: column + row * 32
+
+### Control count
+|:-----|:-------|
+| cnt  | element in each row |
+| cnt3 | Butterfly group: maxmun value in each stage (15, 7, 3, 1)|
+| cnt4 | num. of FFT block (0-1, 0-3, 0-7, 0-15) |
+| s    | Butterfly distance (16, 8, 4, 2, 1) |
 
 
 
