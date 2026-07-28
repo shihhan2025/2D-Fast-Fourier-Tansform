@@ -1,5 +1,6 @@
 ```
 checker/
+|
 ├── fft_fixed.m
 │     Fixed-point MATLAB reference model.
 │     Reproduces every FFT stage using fixed-point arithmetic,
