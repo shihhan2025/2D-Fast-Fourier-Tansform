@@ -22,8 +22,8 @@
                             │
                             ▼
                  ┌─────────────────────────┐
-                 │ Butterfly Engine         │
-                 │ Add/Sub + Pipeline       │
+                 │ Butterfly Engine        │
+                 │ Add/Sub + Pipeline      │
                  └──────────┬──────────────┘
                             ▼
                  ┌─────────────────────────┐
@@ -70,7 +70,6 @@ Input  ---------> |        FSM       |
                  | Write Back     | +-------> SRAM
                  +----------------+
                           
--->
 
 ### Butterfly Pipeline
 | cnt2 | action |
